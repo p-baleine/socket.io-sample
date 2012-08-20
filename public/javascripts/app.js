@@ -1,7 +1,6 @@
 (function() {
 
 var socket = io.connect('http://localhost:3000')
-  , news = ''
   , messages = [];
 
 function updateMessages() {
@@ -20,10 +19,10 @@ socket.on('new-message', function (data) {
 
 $(function() {
   $('#new-message').keypress(function(ev) {
-		if ((ev.which && ev.which === 13) || (ev.keyCode && ev.keyCode === 13)) {
+    if ((ev.which && ev.which === 13) || (ev.keyCode && ev.keyCode === 13)) {
       sendMessage($(this).val());
     }
-	});
+  });
 
 });
 
