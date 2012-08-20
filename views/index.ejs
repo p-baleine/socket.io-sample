@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <section id="socketio-sample">
+
+      <header id="header">
+        <h1><%= title %></h1>
+        <input id="new-message" type="text" placeholder="Enter message..." autofocus />
+      </header>
+
+      <section id="main">
+        <div id="message-container"></div>
+      </section>
+
+      <footer></footer>
+
+    </section>
+
+    <script src="/javascripts/socket.io.js"></script>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/app.js"></script>    
+  </body>
+</html>
