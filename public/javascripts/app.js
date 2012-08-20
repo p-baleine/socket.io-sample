@@ -12,15 +12,18 @@ function sendMessage(message) {
 }
 
 socket.on('new-message', function (data) {
-  console.log(data);
   messages.push(data.message);
   updateMessages();
 });
 
 $(function() {
   $('#new-message').keypress(function(ev) {
+    var msg = $(this).val();
+
     if ((ev.which && ev.which === 13) || (ev.keyCode && ev.keyCode === 13)) {
-      sendMessage($(this).val());
+      messages.push(msg);
+      sendMessage(msg);
+      updateMessages();
     }
   });
 

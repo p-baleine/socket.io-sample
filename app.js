@@ -34,7 +34,7 @@ app.configure('development', function(){
 
 io.sockets.on('connection', function (socket) {
   socket.on('message', function (data) {
-    io.sockets.emit('new-message', { message: data.message });
+    socket.broadcast.emit('new-message', { message: data.message });
     console.log(data);
   });
 });
